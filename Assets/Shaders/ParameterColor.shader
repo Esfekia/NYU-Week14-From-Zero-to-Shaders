@@ -3,6 +3,8 @@
     //Add uniform property to the inspector
     Properties
     {
+        // name of the uniform property used in the shader and how it will be manifested in the unity editor
+        _MyColor("My Cool Color", Color) = (1,0,0,1)
     }
 
     SubShader
@@ -29,6 +31,7 @@
             };
 
             //declare the uniform in the shader
+            float4 _MyColor;
 
             v2f vert (appdata v)
             {
@@ -40,6 +43,7 @@
             fixed4 frag(v2f i) : SV_Target
             {
                 // use the property as color
+                return _MyColor;
             }
 
             ENDCG
