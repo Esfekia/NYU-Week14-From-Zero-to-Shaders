@@ -2,6 +2,7 @@
 {
     Properties
     {
+        _Frequency("Frequency", Range(1,1000)) = 1
     }
 
     SubShader
@@ -23,6 +24,9 @@
             struct appdata
             {
                 float4 vertex : POSITION;
+
+                // uv parameters are excellent not only for sampling textures
+                // but also giving a normalized control value between 0-1 that runs across the surface of an object
                 float2 uv : TEXCOORD0;
             };
 
@@ -31,6 +35,9 @@
                 float2 uv : TEXCOORD0;
                 float4 vertex : SV_POSITION;
             };
+
+            // remember to add the frequency as a uniform!
+            float _Frequency;
 
             v2f vert (appdata v)
             {
@@ -43,6 +50,7 @@
             fixed4 frag(v2f i) : SV_Target
             {
                 //use sin function for color
+                return sin(i.uv.x * PI_2 * _Frequency)* 0.5f +0.5f;
             }
             ENDCG
         }
