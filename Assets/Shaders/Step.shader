@@ -2,6 +2,7 @@
 {
     Properties
     {
+        _EdgeThreshold("Step Threshold", Range(0,1)) = 0.5
     }
 
     SubShader
@@ -32,6 +33,8 @@
                 float4 vertex : SV_POSITION;
             };
 
+            float _EdgeThreshold;
+
             v2f vert (appdata v)
             {
                 v2f o;
@@ -42,7 +45,14 @@
 
             fixed4 frag(v2f i) : SV_Target
             {
-                //step function as color
+                // a standard 1 to zero (white to black) color gradient is:
+                //return i.uv.x;
+
+                //step function as color from zero to one across a range
+                // step function needs an edge threshold (0.5 in our case). 
+                //anything under 0.5 is zero anything over 0.5. is a one.
+                //this will give us half white half black.
+                return step(_EdgeThreshold,i.uv.x);
             }
             ENDCG
         }
