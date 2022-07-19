@@ -2,6 +2,7 @@
 {
     Properties
     {
+        _Power("Power", Range(1,10)) = 1
     }
 
     SubShader
@@ -42,6 +43,12 @@
             fixed4 frag(v2f i) : SV_Target
             {
                 //use pow function as color
+                //return pow(i.uv.x, _Power);
+
+                //creating a particle sprite for example
+                //what if we took the length of uv minus float2 that was at the center?
+                return pow(1-length(float2(0.5, 0.5)- i.uv), _Power);
+
             }
             ENDCG
         }
