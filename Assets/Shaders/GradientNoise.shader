@@ -2,6 +2,9 @@
 {
     Properties
     {
+           // two for xy scale and two for xy offset
+        _ScaleAndOffset("Noise Scale and Offset", Vector) = (4,4,0,0)
+        _Octaves("Noise Octaves", Int) = 4
     }
 
     SubShader
@@ -83,6 +86,9 @@
                 return lerp(lerp(p0, p1, s.x), lerp(p2, p3, s.x), s.y);
             }
 
+            float4 _ScaleAndOffset;
+            int _Octaves;
+
             v2f vert (appdata v)
             {
                 v2f o;
@@ -94,7 +100,29 @@
             fixed4 frag(v2f i) : SV_Target
             {
                 //use noise as color, shifting again to 0-1
-                return gradientNoise(i.uv * 45) * 0.5f + 0.5f;
+                //return gradientNoise(i.uv * 45) * 0.5f + 0.5f;
+
+                // scale(xy) and offset(zw) our incoming uv
+                float2 v = i.uv * _ScaleAndOffset.xy + _ScaleAndOffset.zw;
+                
+                //accumulated noise
+                float n =0.0;
+
+                //frequency which will see how that accumulates over time
+                float fq = 1.0;
+
+                // diminish the amplitude of that signal by half 
+                float amplitude = 1.0;
+
+                // accumulate all our octaves together
+                for (int i=0; i < _Octaves; i++)
+                {
+                    n += gradientNoise(v * fq) * amplitude;
+                    fq *= 2.0f;
+                    amplitude *= 0.5f;
+                }
+
+                return n * 0.5f + 0.5f;
             }
             ENDCG
         }

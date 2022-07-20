@@ -44,7 +44,7 @@
             fixed4 frag(v2f i) : SV_Target
             {
                 //use random as color
-                return float4(random(i.uv `),random(i.uv + 10.0f +_Time.x),random(i.uv + 100.f +_Time.x),1);
+                return float4(random(i.uv + 1.0f +_Time.x),random(i.uv + 10.0f +_Time.x),random(i.uv + 100.f +_Time.x),1);
             }
             ENDCG
         }

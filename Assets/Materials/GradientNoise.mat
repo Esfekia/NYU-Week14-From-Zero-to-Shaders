@@ -26,9 +26,9 @@ Material:
     m_Floats:
     - _FractalRotation: 144.9
     - _Frequency: 3.8
-    - _Octaves: 5
+    - _Octaves: 4
     - _OffsetX: 7.3
     - _OffsetY: 12.81
     m_Colors:
     - _Offset: {r: 0, g: 0, b: 0, a: 0}
-    - _ScaleAndOffset: {r: 4, g: 4, b: -0.4, a: -3.41}
+    - _ScaleAndOffset: {r: 4, g: 4, b: 2, a: 2}
