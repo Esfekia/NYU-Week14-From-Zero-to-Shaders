@@ -307,22 +307,22 @@ PrefabInstance:
     - target: {fileID: 5052113785020806954, guid: be85d5926c9ab4b45ad1930edf24e373,
         type: 3}
       propertyPath: m_Name
-      value: PosColTransPlane
+      value: Positional_Color_With_Math_Twist
       objectReference: {fileID: 0}
     - target: {fileID: 9041389479083595416, guid: be85d5926c9ab4b45ad1930edf24e373,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -70.8
+      value: -48.9
       objectReference: {fileID: 0}
     - target: {fileID: 9041389479083595416, guid: be85d5926c9ab4b45ad1930edf24e373,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -8.4
+      value: -14.4
       objectReference: {fileID: 0}
     - target: {fileID: 9041389479083595416, guid: be85d5926c9ab4b45ad1930edf24e373,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -12.7
+      value: 27.6
       objectReference: {fileID: 0}
     - target: {fileID: 9041389479083595416, guid: be85d5926c9ab4b45ad1930edf24e373,
         type: 3}
@@ -705,7 +705,7 @@ GameObject:
   - component: {fileID: 1406155102}
   - component: {fileID: 1406155101}
   m_Layer: 0
-  m_Name: PlaneMat3
+  m_Name: Lambert_Diffuse_Unlit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -1,4 +1,4 @@
-﻿Shader "PosColTransparent YENI"
+﻿Shader "Positional Color Portal with Math Twist"
 {
    Properties {   
     _Transparency("Intensity", Range(0,1)) = 1.0
