@@ -25,14 +25,14 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _MainTex:
         m_Texture: {fileID: 0}
-        m_Scale: {x: 1.51, y: 1.65}
-        m_Offset: {x: 0, y: 0}
+        m_Scale: {x: 2.44, y: 5.27}
+        m_Offset: {x: 0.54, y: 2.26}
     m_Floats:
     - _Glossiness: 0.5
     - _Metallic: 0
-    - _Octaves: 3
+    - _Octaves: 4
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _Color1: {r: 0.9427508, g: 1, b: 0, a: 1}
-    - _Color2: {r: 0.74509805, g: 0, b: 0.54147255, a: 1}
-    - _ScaleAndOffset: {r: 3.1, g: 2.21, b: 1, a: 1}
+    - _Color1: {r: 0, g: 1, b: 0.95299745, a: 1}
+    - _Color2: {r: 0.03756237, g: 0, b: 1, a: 1}
+    - _ScaleAndOffset: {r: 2.38, g: 2.21, b: 1, a: 1}
